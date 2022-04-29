@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
         - name: my-python
-          image: python-image:latest
+          image: csc-227-final-project-iter-4:latest
           ports:
             - name: http
-              containerPort: 8081
+              containerPort: 8080
               protocol: TCP
           resources:
             limits:
