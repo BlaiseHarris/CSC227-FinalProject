@@ -1,0 +1,7 @@
+gunicorn
+flask
+Flask
+BeautifulSoup4
+bs4
+requests
+matplotlib
