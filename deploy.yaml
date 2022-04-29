@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: my-python
-          image: csc-227-final-project-iter-4:latest
+          image: python-image:latest
           ports:
             - name: http
               containerPort: 8080
