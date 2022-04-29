@@ -1,6 +1,3 @@
-from bs4 import BeautifulSoup
-import requests
-from matplotlib import pyplot as plt
 from flask import Flask, render_template, request
 from waitress import serve
 
@@ -50,7 +47,6 @@ def data():
         form_data = request.form
         return render_template('data.html',form_data = form_data)
 
-
 if __name__ == '__main__':
-    application.run()
+    serve(application, host='0.0.0.0', port=8080)
     
