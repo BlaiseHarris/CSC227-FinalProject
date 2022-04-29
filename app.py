@@ -8,7 +8,8 @@ application = Flask(__name__)
 
 @application.route("/")
 def hello():
-    render_template('form.html')
+    return "hello world";
+    #render_template('form.html')
     # chars = {}
     # keys_removed = (' ', '_', '\n', '-', "'", '©', '"', '%')
     # url = input("Input website you want analyzed: ")
@@ -51,5 +52,5 @@ def data():
 
 
 if __name__ == '__main__':
-    serve(application, host='0.0.0.0', port=8080)
+    application.run()
     
