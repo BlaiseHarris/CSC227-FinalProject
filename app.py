@@ -6,7 +6,7 @@ from waitress import serve
 
 application = Flask(__name__)
 
-@application.route("/form")
+@application.route("/")
 def hello():
     render_template('form.html')
     # chars = {}
