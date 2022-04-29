@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 from matplotlib import pyplot as plt
 from flask import Flask, render_template, request
+from waitress import serve
 
 application = Flask(__name__)
 
@@ -50,5 +51,5 @@ def data():
 
 
 if __name__ == '__main__':
-    application.run()
+    serve(application, host='0.0.0.0', port=8080)
     
