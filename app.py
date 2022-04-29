@@ -1,8 +1,12 @@
 from bs4 import BeautifulSoup
 import requests
 from matplotlib import pyplot as plt
+from flask import Flask
 
-if __name__ == '__main__':
+application = Flask(__name__)
+
+@application.route("/")
+def hello():
     chars = {}
     keys_removed = (' ', '_', '\n', '-', "'", '©', '"', '%')
     url = input("Input website you want analyzed: ")
@@ -30,3 +34,8 @@ if __name__ == '__main__':
     plt.ylabel("Occured", fontsize=14)
     plt.plot(x, y)
     plt.show()
+
+
+if __name__ == '__main__':
+    application.run()
+    
