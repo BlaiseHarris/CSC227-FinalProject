@@ -1,6 +1,7 @@
 gunicorn
-Flask
+flask
 BeautifulSoup4
 bs4
 requests
 matplotlib
+waitress
