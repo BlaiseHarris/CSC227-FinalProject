@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request
 from waitress import serve
 
-application = Flask(__name__)
+app = Flask(__name__)
 
-@application.route("/")
+@app.route("/")
 def hello():
     return "hello world";
     #render_template('form.html')
@@ -39,7 +39,7 @@ def hello():
 # def form():
 #     return render_template('form.html')
  
-@application.route('/data/', methods = ['POST', 'GET'])
+@app.route('/data/', methods = ['POST', 'GET'])
 def data():
     if request.method == 'GET':
         return f"The URL /data is accessed directly. Try going to '/form' to submit form"
@@ -48,5 +48,5 @@ def data():
         return render_template('data.html',form_data = form_data)
 
 if __name__ == '__main__':
-    serve(application, host='0.0.0.0', port=8080)
+    serve(app, host='0.0.0.0', port=8080)
     
