@@ -45,7 +45,7 @@ def plotting():
     # Sending request to get all text from URL with the html.parser
     r = requests.get(url)
     soup = BeautifulSoup(r.text, "html.parser")
-    
+
     # Runs through all characters and counts
     for i in soup.get_text(): 
         if i in chars:
@@ -81,5 +81,4 @@ def plotting():
 
 # main
 if __name__ == '__main__':
-    # serve(app, host='0.0.0.0', port=4206)
-    app.run(debug = True)
+    serve(app, host='0.0.0.0', port=8080)
