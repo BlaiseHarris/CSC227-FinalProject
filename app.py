@@ -5,8 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "hello world";
-    #render_template('form.html')
+    render_template('form.html');
     # chars = {}
     # keys_removed = (' ', '_', '\n', '-', "'", '©', '"', '%')
     # url = input("Input website you want analyzed: ")
