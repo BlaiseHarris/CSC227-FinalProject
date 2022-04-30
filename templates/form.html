@@ -1,10 +1,45 @@
-<form action="/data" method = "POST">
-    <div style="align-items: center; margin: 110px; padding-top: 20px; padding-bottom: 20px; text-align: center;">
-        <h2>Please enter the URL you would like to scrape:</h2>
-        <p style="padding-bottom: 20px;">This application takes a URL and returns the 10 most frequent letters on the page. Try pasting https://en.wikipedia.org/wiki/Main_Page!</p>
-        <div style="box-shadow: 0 0 10px rgb(107, 109, 110); border-radius: 20px; align-items: center;padding: 20px; padding: auto;">
-            <p>URL: <input type = "text" name = "URL" /></p>
-            <p><input type = "submit" value = "Submit" /></p>
-        </div> 
-    </div>
-</form>
+<style type="text/css">
+    .bgimg {
+        background-image: url('../static/index.png');
+        width: 100%;
+        height: 100%;
+    }
+
+    body{
+        margin: 0px;
+    }
+    
+    h2 p {
+        color: white;
+    }
+
+    .btn {
+    width: 76px;
+    font-size: 12px;
+    height: 27px;
+    border: none;
+    outline: none;
+    background: #4297cf;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    float: right;
+    margin-right: 667px;
+    transform: translateY(-41px);
+    }
+</style>
+<div class="bgimg">
+    <form action="/data" method = "POST">
+        <div style="align-items: center; margin-left: 50px; margin-right: 50px; padding-top: 20px; padding-bottom: 20px; text-align: center;">
+            <container style="color: white; text-shadow: 0 0 10px rgba(107, 109, 110);">
+                <h2 style="padding-top: 10px;">Please enter the URL you would like to scrape:</h2>
+                <p style="padding-bottom: 20px;">This application takes a URL and returns the 10 most frequent letters on the page. Try pasting https://en.wikipedia.org/wiki/Main_Page!</p>
+            </container>
+            <div style="box-shadow: 0 0 10px rgb(107, 109, 110); border-radius: 20px; align-items: center;padding: 20px; padding: auto; background-color: white;">                <p>URL: <input type = "text" name = "URL" /></p>
+                <input class="btn" type = "submit" value = "Submit" />
+            </div> 
+        </div>
+    </form>
+</div>

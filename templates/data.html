@@ -1,12 +1,42 @@
-<div style="align-items: center; margin: 110px; text-align: center;">
-    {% for key,value in form_data.items() %}
-    <h2> Chosen URL: </h2>
-    <p style="padding-bottom: 20px;"> {{value}} </p>
-    {% endfor %}
-    <div style="box-shadow: 0 0 10px rgb(107, 109, 110); border-radius: 20px; align-items: center;">
-        <img src="/plot.png" height="500vh" style="margin: 100px;">
-        <form action="/extra" method = "get">
-            <p><input type = "submit" value = "ALL DATA" style="margin-bottom: 40px;"/></p>
-        </form>
-    </div> 
+<style type="text/css">
+    .bgimg {
+        background-image: url('../static/index.png');
+        width: 100%;
+        height: 100%;
+    }
+
+    body{
+        margin: 0px;
+    }
+
+    .btn {
+    width: 200px;
+    font-size: 12px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: #4297cf;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    }
+
+</style>
+<div class="bgimg">
+    <div style="align-items: center; text-align: center; margin-left: 50px; margin-right: 50px;">
+        <container style="color: white; text-shadow: 0 0 10px rgba(107, 109, 110);">
+            {% for key,value in form_data.items() %}
+            <h2 style="margin-top: 0px; padding-top: 10px;"> Chosen URL: </h2>
+            <p style="padding-bottom: 20px;"> {{value}} </p>
+            {% endfor %}
+        </container>
+        <div style="box-shadow: 0 0 10px rgb(107, 109, 110); border-radius: 20px; align-items: center; background-color: white;">
+            <img src="/plot.png" height="500vh" style="margin: 100px; margin-bottom: 25px!important;;">
+            <form action="/extra" method = "get">
+                <p><input class="btn" type = "submit" value = "ALL DATA" style="margin-bottom: 40px;"/></p>
+            </form>
+        </div> 
+    </div>
 </div>

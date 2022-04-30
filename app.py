@@ -1,5 +1,5 @@
 # Importing the libraries needed
-from flask import Flask, render_template, request, Response, make_response
+from flask import Flask, render_template, request, Response, make_response, url_for
 from waitress import serve
 from io import BytesIO
 from bs4 import BeautifulSoup
@@ -81,4 +81,5 @@ def plotting():
 
 # main
 if __name__ == '__main__':
-    serve(app, host='0.0.0.0', port=8080)
+    # serve(app, host='0.0.0.0', port=8080)
+    app.run()
