@@ -34,7 +34,6 @@ def plotting():
     global chars
     img = BytesIO()
     chars = {}
-    print("URL2:", url)
     r = requests.get(url)
     soup = BeautifulSoup(r.text, "html.parser")
 
@@ -51,7 +50,6 @@ def plotting():
     graphChars = sorted(chars.items(), key=lambda kv: (kv[1], kv[0]))
     
     graphChars = graphChars[-10::1]
-    print("chars:", graphChars)
     x, y = zip(*graphChars)
 
     plt.title("Character Amount on Page", fontsize = 20)
