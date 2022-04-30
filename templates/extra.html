@@ -1,0 +1,44 @@
+<style>
+    table.steelBlueCols {
+  border: 4px solid #555555;
+  background-color: #555555;
+  width: 400px;
+  text-align: center;
+   
+}
+table.steelBlueCols td, table.steelBlueCols th {
+  border: 1px solid #555555;
+  padding: 5px 10px;
+}
+table.steelBlueCols tbody td {
+  font-size: 12px;
+  border: 1px solid #ffffff;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+table.steelBlueCols td:nth-child(even) {
+  background: #398AA4;
+}
+
+table.steelBlueCols thead th:first-child {
+  border-left: none;
+}
+</style>
+<div style="align-items: center; margin: 110px; padding-top: 20px; padding-bottom: 20px; text-align: center;">
+    <h2> ALL DATA: </h2>
+    <p style="padding-bottom: 20px;">(not sorted)</p>
+    <div style="box-shadow: 0 0 30px rgb(107, 109, 110); border-radius: 20px; align-items: center;padding: 20px;">
+        <table class="steelBlueCols" style="margin: auto; border-radius: 20px;">
+            <tr style="color: #FFFFFF;">
+              <th>Character</th>
+              <th>Occured</th>
+            </tr>
+              {% for key,value in chars.items() %}
+            <tr style="margin: 5px;">
+                <td> {{key}} </td>
+                <td> {{value}} </td>
+            </tr>
+              {%endfor%}
+          </table>
+    </div> 
+</div>

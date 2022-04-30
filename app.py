@@ -22,12 +22,16 @@ def data():
     if request.method == 'POST':
         global url
         form_data = request.form
-        url = form_data.get('Name')
-
+        url = form_data.get('URL')
     return render_template('data.html',form_data = form_data)
+
+@app.route('/extra/', methods = ['GET'])
+def extra():
+    return render_template('extra.html', chars = chars)
 
 @app.route('/plot.png')
 def plotting():
+    global chars
     img = BytesIO()
     chars = {}
     print("URL2:", url)
@@ -36,7 +40,7 @@ def plotting():
 
     for i in soup.get_text():
         if i in chars:
-            chars[i] += 1 
+            chars[i] += 1
 
         else:
             chars[i] = 1
@@ -45,6 +49,7 @@ def plotting():
 
     plt.figure()
     graphChars = sorted(chars.items(), key=lambda kv: (kv[1], kv[0]))
+    
     graphChars = graphChars[-10::1]
     print("chars:", graphChars)
     x, y = zip(*graphChars)
@@ -55,11 +60,11 @@ def plotting():
     plt.plot(x, y)
     plt.savefig(img, format='png')
     img.seek(0)
-
     response=make_response(img.getvalue())
     response.headers['Content-Type'] = 'image/png'
     img.close()
     return response
+
 
 if __name__ == '__main__':
     # serve(app, host='0.0.0.0', port=4206)

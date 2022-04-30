@@ -1,5 +1,12 @@
-{% for key,value in form_data.items() %}
-<h2> {{key}}</h2>
-<p> {{value}}</p>
-{% endfor %}
-<img src="/plot.png" height="300">
+<div style="align-items: center; margin: 110px; text-align: center;">
+    {% for key,value in form_data.items() %}
+    <h2> Chosen URL: </h2>
+    <p style="padding-bottom: 20px;"> {{value}} </p>
+    {% endfor %}
+    <div style="box-shadow: 0 0 30px rgb(107, 109, 110); border-radius: 20px; align-items: center;">
+        <img src="/plot.png" height="500vh" style="margin: 100px;">
+        <form action="/extra" method = "get">
+            <p><input type = "submit" value = "ALL DATA" style="margin-bottom: 40px;"/></p>
+        </form>
+    </div> 
+</div>
