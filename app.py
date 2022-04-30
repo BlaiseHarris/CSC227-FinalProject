@@ -1,16 +1,24 @@
-from flask import Flask, render_template, request
+# Importing the libraries needed
+from flask import Flask, render_template, request, Response, make_response
 from waitress import serve
 from io import BytesIO
 from bs4 import BeautifulSoup
 import requests
-from flask import Response, make_response
 from matplotlib.figure import Figure
 from matplotlib import pyplot as plt
 import matplotlib
+
+# This allows matplotlib work outside the mainthread
 matplotlib.use('Agg')
+
+# Initializing the characters that will not show
+global keys_removed
 keys_removed = (' ', '_', '\n', '-', "'", '©', '"', '%')
+
+# Creating an instance of flask 
 app = Flask(__name__)
 
+# Landing page that asks for URL
 @app.route("/")
 def hello():
     return render_template('form.html');
@@ -18,7 +26,7 @@ def hello():
 @app.route('/data/', methods = ['POST', 'GET'])
 def data():
     if request.method == 'GET':
-        return f"The URL /data is accessed directly. Try going to '/form' to submit form"
+        return render_template('form.html')
     if request.method == 'POST':
         global url
         form_data = request.form
